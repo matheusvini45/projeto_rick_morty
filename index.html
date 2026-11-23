@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galeria de personagens de Rick and Morty consumindo a API pública em tempo real.">
+  <title>Rick and Morty | Galeria de Personagens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1 class="titulo">Rick <span>and</span> Morty</h1>
+    <p class="subtitulo">Galeria de personagens com dados em tempo real da API pública</p>
+  </header>
+
+  <main class="conteudo">
+    <section class="sobre" aria-labelledby="sobre-titulo">
+      <h2 id="sobre-titulo">Sobre o projeto</h2>
+      <p>
+        Esta página consome a <strong>Rick and Morty API</strong> usando <code>fetch</code> e monta
+        cada card dinamicamente com JavaScript. Pesquise por nome, filtre por status e marque
+        seus personagens favoritos no coração.
+      </p>
+    </section>
+
+    <section class="controles" aria-label="Filtros">
+      <input type="search" id="busca" placeholder="Buscar personagem pelo nome..." aria-label="Buscar personagem">
+      <select id="filtro-status" aria-label="Filtrar por status">
+        <option value="">Todos os status</option>
+        <option value="alive">Vivo</option>
+        <option value="dead">Morto</option>
+        <option value="unknown">Desconhecido</option>
+      </select>
+      <button type="button" id="btn-favoritos" aria-pressed="false">♥ Só favoritos</button>
+    </section>
+
+    <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+
+    <!-- O HTML só recebe os cards: eles são criados pelo script.js -->
+    <section id="cards" class="grade" aria-label="Personagens"></section>
+
+    <nav class="paginacao" aria-label="Paginação">
+      <button type="button" id="btn-anterior">← Anterior</button>
+      <span id="info-pagina">Página 1</span>
+      <button type="button" id="btn-proxima">Próxima →</button>
+    </nav>
+  </main>
+
+  <footer class="rodape">
+    <p>Dados fornecidos por <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener">rickandmortyapi.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
